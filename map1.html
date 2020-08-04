@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_ad38260998cd49f9833cd50c43910d76 {
+                #map_8fccf4cd0474438ba19ebaac6f2de0e8 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,13 +35,13 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_ad38260998cd49f9833cd50c43910d76" ></div>
+            <div class="folium-map" id="map_8fccf4cd0474438ba19ebaac6f2de0e8" ></div>
         
 </body>
 <script>    
     
-            var map_ad38260998cd49f9833cd50c43910d76 = L.map(
-                "map_ad38260998cd49f9833cd50c43910d76",
+            var map_8fccf4cd0474438ba19ebaac6f2de0e8 = L.map(
+                "map_8fccf4cd0474438ba19ebaac6f2de0e8",
                 {
                     center: [38.58, -99.09],
                     crs: L.CRS.EPSG3857,
@@ -55,9 +55,64 @@
 
         
     
-            var tile_layer_311f47d9dff6441f8f9750f7366a252d = L.tileLayer(
+            var tile_layer_1538ee5ddef7427bac74d51514f47ca9 = L.tileLayer(
                 "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
                 {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_ad38260998cd49f9833cd50c43910d76);
+            ).addTo(map_8fccf4cd0474438ba19ebaac6f2de0e8);
         
+    
+            var feature_group_3e3e0e2a8f2145e6a66d08eab534ca6a = L.featureGroup(
+                {}
+            ).addTo(map_8fccf4cd0474438ba19ebaac6f2de0e8);
+        
+    
+            var marker_607d4dca455e45aa9a3696670f59da25 = L.marker(
+                [38.2, -99.1],
+                {}
+            ).addTo(feature_group_3e3e0e2a8f2145e6a66d08eab534ca6a);
+        
+    
+            var icon_b34bf7fc1ce346819574bec94e2e4b7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_607d4dca455e45aa9a3696670f59da25.setIcon(icon_b34bf7fc1ce346819574bec94e2e4b7f);
+        
+    
+        var popup_622415b8a0af435c938977c521034611 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d190924f3f384912a8fbb581b57569aa = $(`<div id="html_d190924f3f384912a8fbb581b57569aa" style="width: 100.0%; height: 100.0%;">Hi! I am a marker</div>`)[0];
+            popup_622415b8a0af435c938977c521034611.setContent(html_d190924f3f384912a8fbb581b57569aa);
+        
+
+        marker_607d4dca455e45aa9a3696670f59da25.bindPopup(popup_622415b8a0af435c938977c521034611)
+        ;
+
+        
+    
+    
+            var marker_92a799f0273047b8a7036989fa75760e = L.marker(
+                [39.2, -97.1],
+                {}
+            ).addTo(feature_group_3e3e0e2a8f2145e6a66d08eab534ca6a);
+        
+    
+            var icon_e166f89b0f5b4220a59c6bbb8381904b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_92a799f0273047b8a7036989fa75760e.setIcon(icon_e166f89b0f5b4220a59c6bbb8381904b);
+        
+    
+        var popup_1118a97db87d4f4ea1a9420ad54163d2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e34638553a7b4e58bc4a369b53fc5b55 = $(`<div id="html_e34638553a7b4e58bc4a369b53fc5b55" style="width: 100.0%; height: 100.0%;">Hi! I am a marker</div>`)[0];
+            popup_1118a97db87d4f4ea1a9420ad54163d2.setContent(html_e34638553a7b4e58bc4a369b53fc5b55);
+        
+
+        marker_92a799f0273047b8a7036989fa75760e.bindPopup(popup_1118a97db87d4f4ea1a9420ad54163d2)
+        ;
+
+        
+    
 </script>
