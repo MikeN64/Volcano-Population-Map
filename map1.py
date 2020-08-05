@@ -14,13 +14,26 @@ html = """<h4>Volcano Information</h4>
 Height: {} m
 """
 
+def produce_color(elev):
+    LOW = 1000
+    HIGH = 3000
+
+    if elev <= LOW:
+        return "green"
+    if LOW < elev < HIGH:
+        return "orange"
+    if elev >= HIGH:
+        return "red"
+    return "gray"
+    
 map = folium.Map(location=START_POINT, zoom_start=5, tiles="Stamen Terrain")
 
 feature_group = folium.FeatureGroup(name="Volcanos Map")
 
 for lat, lon, name, elev in zip(lats, lons, names, elevs):
     iframe = folium.IFrame(html=html.format(name, name, elev), width=200, height=100)
-    feature_group.add_child(folium.Marker(location=(lat, lon), popup=folium.Popup(iframe), icon=folium.Icon(color="green")))
+    circle_marker = folium.CircleMarker(location=(lat, lon), popup=folium.Popup(iframe), fill_color=produce_color(elev), color="grey", fill_opacity=0.7)
+    feature_group.add_child(circle_marker)
 
 map.add_child(feature_group)
 
