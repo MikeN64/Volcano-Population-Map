@@ -46,16 +46,21 @@ def style_population(polygon):
 
 map = folium.Map(location=START_POINT, zoom_start=5, tiles="Stamen Terrain")
 
-feature_group = folium.FeatureGroup(name="Volcanos Map")
+volcano_fg = folium.FeatureGroup(name="Volcanos")
+population_fg = folium.FeatureGroup(name="Population")
 
 for lat, lon, name, elev in zip(lats, lons, names, elevs):
     iframe = folium.IFrame(html=html.format(name, name, elev), width=200, height=100)
     circle_marker = folium.CircleMarker(location=(lat, lon), popup=folium.Popup(iframe), fill_color=color_marker(elev), color="grey", fill_opacity=0.7)
-    feature_group.add_child(circle_marker)
+    volcano_fg.add_child(circle_marker)
 
 geo_json = folium.GeoJson(data=open("world.json", "r", encoding="utf-8-sig").read(), style_function=style_population)
-feature_group.add_child(geo_json)
+population_fg.add_child(geo_json)
 
-map.add_child(feature_group)
+layer_control = folium.LayerControl()
+
+map.add_child(volcano_fg)
+map.add_child(population_fg)
+map.add_child(layer_control)
 
 map.save("map1.html")
