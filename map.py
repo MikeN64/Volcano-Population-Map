@@ -63,4 +63,4 @@ map.add_child(volcano_fg)
 map.add_child(population_fg)
 map.add_child(layer_control)
 
-map.save("map1.html")
+map.save("map.html")
