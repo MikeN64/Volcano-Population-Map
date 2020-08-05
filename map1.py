@@ -14,17 +14,19 @@ html = """<h4>Volcano Information</h4>
 Height: {} m
 """
 
-def produce_marker_color(elev):
+def color_marker(elev):
     LOW = 1000
     HIGH = 3000
+    
+    color = "gray"
 
     if elev <= LOW:
-        return "green"
-    if LOW < elev < HIGH:
-        return "orange"
+        color = "green"
+    elif LOW < elev < HIGH:
+        color = "orange"
     if elev >= HIGH:
-        return "red"
-    return "gray"
+        color = "red"
+    return color
 
 def style_population(polygon):
     LOW = 10000000
@@ -48,7 +50,7 @@ feature_group = folium.FeatureGroup(name="Volcanos Map")
 
 for lat, lon, name, elev in zip(lats, lons, names, elevs):
     iframe = folium.IFrame(html=html.format(name, name, elev), width=200, height=100)
-    circle_marker = folium.CircleMarker(location=(lat, lon), popup=folium.Popup(iframe), fill_color=produce_marker_color(elev), color="grey", fill_opacity=0.7)
+    circle_marker = folium.CircleMarker(location=(lat, lon), popup=folium.Popup(iframe), fill_color=color_marker(elev), color="grey", fill_opacity=0.7)
     feature_group.add_child(circle_marker)
 
 geo_json = folium.GeoJson(data=open("world.json", "r", encoding="utf-8-sig").read(), style_function=style_population)
