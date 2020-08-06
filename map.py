@@ -74,8 +74,8 @@ Height: {} m
         volcano_fg = self.create_volcano_feature_group()
         population_fg = self.create_population_feature_group()
         
-        self.map.add_child(volcano_fg)
         self.map.add_child(population_fg)
+        self.map.add_child(volcano_fg)
         self.map.add_child(layer_control)
     
 
